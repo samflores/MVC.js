@@ -1,0 +1,80 @@
+html, body {
+	background-color: #eee;
+}
+
+.container > footer p {
+	text-align: center; /* center align it with the container */
+}
+
+.container {
+	width: 820px;
+}
+
+.content {
+	background-color: #fff;
+	padding: 20px;
+	margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+	-webkit-border-radius: 0 0 6px 6px;
+	   -moz-border-radius: 0 0 6px 6px;
+	        border-radius: 0 0 6px 6px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+	   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+	        box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.page-header {
+	background-color: #f5f5f5;
+	padding: 20px 20px 10px;
+	margin: -20px -20px 20px;
+}
+
+.content .span4 {
+	margin-left: 0;
+	padding-left: 19px;
+	border-left: 1px solid #eee;
+}
+
+.topbar .btn {
+	border: 0;
+}
+
+.input {
+	margin: 0 !important;
+}
+      
+.input .add-on {
+	background-size: 24px 24px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.input.name .add-on {
+	background-image: url('../imgs/name.png');
+}
+
+.input.mail .add-on {
+	background-image: url('../imgs/mail.png');
+}
+
+.input.twitter .add-on {
+	background-image: url('../imgs/twitter.png');
+}
+
+.input.phone .add-on {
+	background-image: url('../imgs/phone.png');
+}
+
+#contacts_list li {
+	width: 280px;
+	height: 110px;
+	float: left;
+}
+
+footer {
+	color: #cdcdcd;
+}
+
+#alert {
+	/*display: block;*/
+	/*margin: 0 auto;*/
+}

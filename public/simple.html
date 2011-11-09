@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Contatos</title>
+    
+    <script src="js/json2.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/jquery.js"></script>
+
+    <script src="js/backbone.js"></script>
+    <script src="js/backbone-localstorage.js"></script>
+    
+    <script src="js/contacts.js"></script>
+  </head>
+
+  <body>
+
+    <div id="contacts_app">
+    	<ul id="contacts_list"></ul>
+	    <form class="new_contact">
+        	<input id="contact_name" 	type="text" 	placeholder="Nome">
+          <input id="contact_phone" 	type="text" 	placeholder="Telefone">
+          <input id="contact_mail" 	type="email" 	placeholder="E-mail">
+          <input id="contact_twitter" type="text" 	placeholder="Twitter">
+	    </form>
+    </div>
+
+    <script type="text/template" id="contact_template">
+    	<article class="vcard">
+    		<div class="name"><%= name %></div>
+    		<div class="phone"><%= phone %></div>
+    		<div class="mail"><%= mail %></div>
+    		<div class="twitter"><%= twitter %></div>
+    		<a href="#delete">apagar</a>
+    	</article>
+    </script>
+  </body>
+</html>
