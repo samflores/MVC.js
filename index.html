@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Server Side MVC</title>
+    <script src="modernizr-2.0.6.min.js"></script>
+    <script src="jquery-1.6.2.min.js"></script>
+    <script src="deck.core.js"></script>
+    <script src="deck.hash.js"></script>
+    <script src="deck.status.js"></script>
+    <link rel="stylesheet" href="deck.core.css">
+    <link rel="stylesheet" href="deck/style/neon.css">
+    <link rel="stylesheet" href="deck/transition/fade.css">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background: #000;
+      }
+
+      .deck-container {
+        width: 800px;
+        height: 600px;
+        margin-top: -300px;
+        font-size: 250%;
+      }
+
+      body:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 50%;
+      }
+
+      .slide ul {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+      }
+
+      .slide h1 {
+        font-size: 200%;
+        padding-top: 2.5em;
+      }
+
+      .slide h2 {
+        font-size: 170%;
+      }
+
+      .slide-6 span {
+        font-size: 300%;
+        position: relative;
+        left: 180px;
+        top: -280px;
+        color: red;
+        -webkit-transform: rotate(-30deg);
+        border: thin solid 1px;
+        display: block;
+        font-weight: bold;
+      }
+
+      .slide-10 > div, .slide-11 > div {
+        width: 800px;
+        height: 400px;
+        /*border: 1px solid red;*/
+      }
+
+      .slide-10 > div >div, .slide-11 > div >div {
+        width: 390px;
+        height: 400px;
+        display: inline-block;
+        /*border: 1px solid red;*/
+      }
+
+      .slide-10 img, .slide-11 img {
+        height: 120px;
+        width: auto;
+      }
+
+      .slide-11 span {
+        color: red;
+        position: relative;
+        top: -350px;
+        left: 100px;
+        font-size: 600%;
+        font-weight: bold;
+      }
+
+      .slide-12 li, .slide-13 li {
+        display: inline-block;
+        float: left;
+        margin-left: 10px;
+        width: 390px;
+      }
+
+      .slide-13 li.striked {
+        text-decoration: line-through;
+        color: rgba(255,255,255,0.3);
+      }
+
+      .slide-13 li.dimmed {
+        color: rgba(255,255,255,0.3);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="deck-container">
+      <div id="header" class="slide slide-1">
+        <h1 class="main-header">Server Side MVC</h1>
+      </div>
+
+      <div id="mvc" class="slide slide-2">
+        <h2>MVC</h2>
+        <ul>
+          <li class="slide">Model</li>
+          <li class="slide">View</li>
+          <li class="slide">Controller</li>
+        </ul>
+      </div>
+
+      <div id="model" class="slide slide-3">
+        <h2>Model</h2>
+        <ul>
+          <li class="slide">O que salvar?</li>
+          <li class="slide">Como salvar?</li>
+          <li class="slide">ActiveRecord</li>
+        </ul>
+      </div>
+
+      <div id="controller" class="slide slide-4">
+        <h2>Controller</h2>
+        <ul>
+          <li class="slide">O que fazer?</li>
+          <li class="slide">Model ➜ Visão</li>
+          <li class="slide">ActionController	</li>
+        </ul>
+      </div>
+
+      <div id="view" class="slide slide-5">
+        <h2>View</h2>
+        <ul>
+          <li class="slide">O que exibir?</li>
+          <li class="slide">ActionView</li>
+        </ul>
+      </div>
+
+      <div id="html-view" class="slide slide-6">
+        <h2>View</h2>
+        <ul>
+          <li>O que exibir?</li>
+          <li>ActionView</li>
+        </ul>
+        <span>HTML</span>
+      </div>
+
+      <div id="js-ftw-1" class="slide slide-7">
+        <h2>JavaScript FTW!</h2>
+        <ul>
+          <li class="slide">Lógica na Visão</li>
+          <li class="slide">AJAX</li>
+          <li class="slide">jQuery</li>
+        </ul>
+      </div>
+
+      <div id="js-ftw-2" class="slide slide-8">
+        <h2>JavaScript FTW?</h2>
+        <ul>
+          <li class="slide">Muita lógica na Visão</li>
+          <li class="slide">Trabalho dobrado</li>
+          <li class="slide">Espaguete</li>
+        </ul>
+      </div>
+
+      <div id="js-mvc-1" class="slide slide-9">
+        <h2>JavaScript MVC</h2>
+        <ul>
+          <li class="slide">Arquitetura Conhecida</li>
+          <li class="slide">Sabemos que funciona</li>
+        </ul>
+      </div>
+
+      <div id="js-mvc-2" class="slide slide-10">
+        <h2>JavaScript MVC?</h2>
+        <div class="server-client-container">
+          <div class="server">
+            <img src="server.png" alt="server">
+            <ul>
+              <li>Model</li>
+              <li>View</li>
+              <li>Controller</li>
+            </ul>
+          </div>
+
+          <div class="client">
+            <img src="monitor.png" alt="server">
+            <ul class="slide">
+              <li>Model</li>
+              <li>View</li>
+              <li>Controller</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="js-mvc-3" class="slide slide-11">
+        <h2>JavaScript MVC?</h2>
+        <div class="server-client-container">
+          <div class="server">
+            <img src="server.png" alt="server">
+            <ul>
+              <li>Model</li>
+              <li>View</li>
+              <li>Controller</li>
+            </ul>
+          </div>
+
+          <div class="client">
+            <img src="monitor.png" alt="monitor">
+            <ul>
+              <li>Model</li>
+              <li>View</li>
+              <li>Controller</li>
+            </ul>
+          </div>
+        </div>
+
+        <span>X</span>
+      </div>
+
+      <div id="js-frameworks-1" class="slide slide-12">
+        <h2>JS MVC Frameworks</h2>
+        <ul>
+          <li class="slide">Knockout.js</li>
+          <li class="slide">SproutCore</li>
+          <li class="slide">PureMVC</li>
+          <li class="slide">JavaScriptMVC</li>
+          <li class="slide">eMVC</li>
+          <li class="slide">Dojo toolkit</li>
+          <li class="slide">Backbone.js</li>
+          <li class="slide">ExtJS 4</li>
+          <li class="slide">YUI 3</li>
+          <li class="slide">AngularJS</li>
+        </ul>
+      </div>
+
+      <div id="js-frameworks-2" class="slide slide-13">
+        <h2>JS MVC Frameworks</h2>
+        <ul>
+          <li class="striked">Knockout.js</li>
+          <li class="striked">SproutCore</li>
+          <li class="striked">PureMVC</li>
+          <li class="striked">JavaScriptMVC</li>
+          <li class="dimmed">eMVC</li>
+          <li class="striked">Dojo toolkit</li>
+          <li>Backbone.js</li>
+          <li class="striked">ExtJS 4</li>
+          <li class="dimmed">YUI 3</li>
+          <li class="dimmed">AngularJS</li>
+        </ul>
+      </div>
+      <div id="lets_code" class="slide slide-1">
+        <h1 class="main-header">Let's Code!</h1>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      //<![CDATA[
+      $.deck('.slide', {
+        keys: {
+          next: 39,
+          previous: 37
+        }
+      });
+    </script>
+  </body>
+</html>
