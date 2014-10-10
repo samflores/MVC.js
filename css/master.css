@@ -41,7 +41,7 @@ html, body {
 .input {
 	margin: 0 !important;
 }
-      
+
 .input .add-on {
 	background-size: 24px 24px;
 	background-position: center center;
@@ -65,9 +65,13 @@ html, body {
 }
 
 #contacts_list li {
-	width: 280px;
-	height: 110px;
+	width: 33.3%;
+	height: 60px;
 	float: left;
+}
+
+.vcard .phone, .vcard .mail, .vcard .twitter {
+  display: none;
 }
 
 footer {
